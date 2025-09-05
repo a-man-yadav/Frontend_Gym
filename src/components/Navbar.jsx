@@ -1,13 +1,16 @@
 import React, { useState } from "react";
 import { IoMenu, IoClose } from "react-icons/io5";
-import {motion} from 'motion/react'
+import { Link } from "react-router-dom";
+import { motion } from 'framer-motion'
 
 const Navbar = () => {
     const [menu, setMenu] = useState(false);
 
+    // const navigate = useNavigate()
+
     const items = [
-        { id: 1, text: "Home" },
-        { id: 2, text: "About Us" },
+        { id: 1, text: "Home", path: "/" },
+        { id: 2, text: "About Us", path: "/about" },
         { id: 3, text: "Programs" },
         { id: 4, text: "Training" },
         { id: 5, text: "Blogs" },
@@ -15,27 +18,27 @@ const Navbar = () => {
 
     return (
         <>
-            <motion.nav 
-            initial={{opacity:0, y:-100}}
-            animate={{opacity:1, y:0}}
-            transition={{
-                duration:0.5
+            <motion.nav
+                initial={{ opacity: 0, y: -100 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{
+                    duration: 0.5
 
-            }}
-            className="hidden md:flex text-white bg-[#201e1e] shadow-md sticky z-50 top-0 left-0 items-center justify-between w-full px-6 py-4">
-                <div className="flex items-center gap-3">
+                }}
+                className="hidden md:flex text-white bg-[#201e1e] shadow-md sticky z-50 top-0 left-0 items-center justify-between w-full px-6 py-4">
+                <Link to={"/"} className="flex items-center gap-3">
                     <img src="https://res.cloudinary.com/db0wuel0k/image/upload/v1756924435/logo_jaogfi.jpg" alt="Logo" className="max-h-10 max-w-10 rounded-full" />
                     <h2 className="text-2xl font-heading font-bold text-[#E50914]">My-Fit</h2>
-                </div>
+                </Link>
 
                 <div>
                     <ul className="space-x-10 list-none hidden md:flex md:text-base lg:text-lg items-center">
-                        {items.map(({ id, text }) => (
+                        {items.map(({ id, text, path }) => (
                             <li
-                                className="hover:text-[#E50914] duration-200 hover:cursor-pointer hover:underline"
                                 key={id}
+                                className="hover:text-[#E50914] duration-200 hover:cursor-pointer hover:underline"
                             >
-                                {text}
+                                <Link to={path}>{text}</Link>
                             </li>
                         ))}
                     </ul>
@@ -58,8 +61,9 @@ const Navbar = () => {
                 </div>
             </motion.nav>
 
+
+            {/* MObile navbar */}
             <div className="flex md:hidden justify-between items-center bg-[#201e1e] text-white px-6 py-4 fixed top-0 left-0 w-full z-50">
-                {/* Logo + Title */}
                 <div className="flex items-center gap-2">
                     <img src="https://res.cloudinary.com/db0wuel0k/image/upload/v1756924435/logo_jaogfi.jpg" alt="Logo" className="h-10 w-10 rounded-full" />
                     <h2 className="text-xl font-heading font-bold text-[#E50914]">My-Fit</h2>
@@ -82,13 +86,14 @@ const Navbar = () => {
 
                     <div className="flex flex-col items-center mt-20 space-y-6">
                         <ul className="space-y-6 text-lg">
-                            {items.map(({ id, text }) => (
+                            {items.map(({ id, text, path }) => (
                                 <li
                                     key={id}
                                     className="hover:text-[#E50914] duration-200 cursor-pointer"
                                     onClick={() => setMenu(false)}
                                 >
-                                    {text}
+                                    <Link to={path}>{text}</Link>
+
                                 </li>
                             ))}
                         </ul>

@@ -1,6 +1,7 @@
 import React from 'react'
 import { motion } from "framer-motion";
 import { useInView } from "react-intersection-observer";
+import {Link} from 'react-router-dom'
 import { FaDumbbell, FaUserCheck, FaClipboardList, FaTags } from "react-icons/fa";
 
 const Aboutus = () => {
@@ -31,7 +32,7 @@ const Aboutus = () => {
 
   const { ref: imgRef, inView: imgInView } = useInView({
     threshold: 0.5,
-    triggerOnce: true
+    triggerOnce: true 
   });
 
   const { ref: headingRef, inView: headingInView } = useInView({
@@ -123,7 +124,7 @@ const Aboutus = () => {
           </div>
 
           <div className='mt-4 text-right'>
-            <a href="" className='text-[#ea6a70]  hover:underline hover:text-[#f02933]'>More About Us →</a>
+            <Link to={"/about"} className='text-[#ea6a70]  hover:underline hover:text-[#f02933]'>More About Us →</Link>
           </div>
 
         </div>

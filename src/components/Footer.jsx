@@ -16,18 +16,18 @@ const Footer = () => {
 
         <div className="border-t border-gray-800" />
 
-        <div className="py-10 grid grid-cols-1 md:grid-cols-3 gap-8">
+        <div className="py-10 grid grid-cols-3 gap-8">
           <div>
-            <h3 className="text-lg font-semibold mb-2">My-Fit Gym</h3>
-            <p className="text-sm text-gray-300">123 Fitness St, Workout City, 10110</p>
-            <a href="" className="block text-sm text-gray-300 mt-2">
+            <h3 className="text-sm md:text-lg md:font-semibold mb-2">My-Fit Gym</h3>
+            <p className="text-xs md:text-lg text-gray-300">123 Fitness , Workout City</p>
+            <a href="" className="block text-xs md:text-sm text-gray-300 mt-2">
               contact@myfitgym.com
             </a>
           </div>
 
           <div className="text-center md:text-left md:pl-6">
-            <h3 className="text-lg font-semibold mb-2">Quick Links</h3>
-            <ul className="text-sm text-gray-300 space-y-2">
+            <h3 className="text-sm md:text-lg md:font-semibold mb-2">Quick Links</h3>
+            <ul className="text-xs md:text-sm text-gray-300 space-y-2">
               <li><a href="" className="hover:text-white">FAQ</a></li>
               <li><a href="" className="hover:text-white">Privacy Policy</a></li>
               <li><a href="" className="hover:text-white">Terms of Service</a></li>
@@ -35,8 +35,8 @@ const Footer = () => {
           </div>
 
           <div className="flex flex-col items-start md:items-end">
-            <h3 className="text-lg font-semibold mb-2">Follow Us</h3>
-            <div className="flex gap-4 mt-2">
+            <h3 className="text-sm md:text-lg md:font-semibold mb-2">Follow Us</h3>
+            <div className="flex text-xs md:text-lg gap-4 mt-2">
               <a href="" className="p-2 bg-white/6 rounded-full hover:bg-white/10">
                 <FaInstagram />
               </a>
