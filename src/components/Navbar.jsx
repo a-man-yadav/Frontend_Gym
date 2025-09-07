@@ -11,9 +11,9 @@ const Navbar = () => {
     const items = [
         { id: 1, text: "Home", path: "/" },
         { id: 2, text: "About Us", path: "/about" },
-        { id: 3, text: "Programs" },
-        { id: 4, text: "Training" },
-        { id: 5, text: "Blogs" },
+        { id: 3, text: "Programs", path: "/programs" },
+        { id: 4, text: "Training" , path: "/training"},
+        { id: 5, text: "Blogs", path: "/blogs" },
     ];
 
     return (
