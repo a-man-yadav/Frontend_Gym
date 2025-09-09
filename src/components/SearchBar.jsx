@@ -29,28 +29,7 @@ const SearchBar = () => {
                     />
                 </div>
 
-                <div className="flex gap-3 items-center">
-                    <select
-                        className="bg-[#121212] text-gray-200 px-3 py-2 rounded-lg border border-[#2b2b2b] focus:outline-none min-w-[140px]"
-                        aria-label="Category"
-                        defaultValue=""
-                    >
-                        <option value="Strength">Strength</option>
-                        <option value="Cardio">Cardio</option>
-                        <option value="Weight Loss">Weight Loss</option>
-                        <option value="Weight Gain">Weight Gain</option>
-                    </select>
-
-                    <select
-                        className="bg-[#121212] text-gray-200 px-3 py-2 rounded-lg border border-[#2b2b2b] focus:outline-none min-w-[140px]"
-                        aria-label="Sort By"
-                        defaultValue=""
-                    >
-                        <option value="Newest">Newest</option>
-                        <option value="Oldest">Oldest</option>
-                        <option value="Popular">Popular</option>
-                    </select>
-                </div>
+                
 
                 {/* Toggles */}
                 <div className="ml-auto flex gap-2 relative overflow-hidden rounded-lg">
