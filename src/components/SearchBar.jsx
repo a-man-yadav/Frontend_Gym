@@ -70,7 +70,7 @@ const SearchBar = () => {
                         Exercise
                     </button>
 
-                    <button
+                    <button 
                         onClick={() => navigate("/programs/diets")}
                         className={`relative z-10 px-6 py-2 font-semibold transition-colors duration-300 ${activeFilter === "Diet" ? "text-white" : "text-gray-300"
                             }`}

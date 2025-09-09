@@ -1,10 +1,16 @@
 import React from 'react'
 import Navbar from '../components/Navbar'
 import SearchBar from '../components/SearchBar'
-import { Outlet } from 'react-router-dom'
+import { Outlet, useNavigate } from 'react-router-dom'
 
 const Programs = () => {
+
+
+  const navigate = useNavigate();
+
   return (
+
+
     <div>
       <Navbar />
 
@@ -25,11 +31,23 @@ const Programs = () => {
           </p>
         </div>
       </section>
+      {/* user programs */}
+
+      <section className='relative w-full mt-10 p-5 items-center justify-center mb-10'>
+        <div className='flex justify-between'>
+          <h1 className='text-white text-xl md:text-2xl lg:text-4xl ml-16 font-bold uppercase'>User Programs</h1>
+          <button
+            onClick={() => navigate('/create')}
+            className=' bg-[#E50914] text-white  px-7 mt-2 rounded-lg py-4 font-bold hover:bg-[#9b252b] hover:cursor-pointer'>Create Your Own Program</button>
+        </div>
+      </section>
 
       {/* Search bar */}
       <SearchBar />
 
       <Outlet />
+
+      
     </div>
   )
 }

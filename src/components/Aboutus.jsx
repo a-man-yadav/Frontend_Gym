@@ -31,7 +31,7 @@ const Aboutus = () => {
 
 
   const { ref: imgRef, inView: imgInView } = useInView({
-    threshold: 0.5,
+    threshold: 0.1,
     triggerOnce: true 
   });
 

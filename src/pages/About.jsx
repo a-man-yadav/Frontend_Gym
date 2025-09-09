@@ -1,9 +1,14 @@
 import React from 'react'
 import Navbar from '../components/Navbar'
 import Footer from '../components/Footer'
-import { motion } from 'framer-motion'
+import { motion, useInView } from 'framer-motion'
 
 const About = () => {
+
+  const {ref, inView} = useInView({
+    threshold:0.1,
+    triggerOnce: true,
+  })
 
   const members = [
     {
@@ -87,18 +92,32 @@ const About = () => {
           <div className='mt-16 pt-10'>
 
             <h3 className='text-gray-400'>About MY_FIT Gym</h3>
-            <h1 className='text-4xl md:text-7xl font-bold '>Transforming Fitness,
+            <motion.h1
+            initial={{opacity:0, x:-40}}
+            animate={{opacity:1, x:0}}
+            transition={{duration:1, delay:0.1, ease: "easeOut"}}
+            className='text-4xl md:text-7xl font-bold '>Transforming Fitness,
               <br />
               One Member at a Time
-            </h1>
-            <p className='mt-4 text-sm md:text-xl text-gray-300'>Our mission is to empower you to reach your full potential through world-class coaching and a motivating community.</p>
+            </motion.h1>
+            <motion.p
+            initial={{opacity:0, x:100}}
+            animate={{opacity:1, x:0}}
+            transition={{duration:1,
+              delay:0.3,
+              ease: "easeOut"}}
+            className='mt-4 text-sm md:text-xl text-gray-300'>
+              Our mission is to empower you to reach your full potential through world-class coaching and a motivating community.
+
+            </motion.p>
 
             <motion.button
+              ref={ref}
               initial={{ opacity: 0, scale: 0 }}
               animate={{ opacity: 1, scale: 1 }}
               transition={{
                 duration: 0.5,
-                delay: 1,
+                delay: 0.2,
                 ease: "easeIn"
               }}
               className="px-8 py-3 bg-[#E50914] hover:bg-[#b20710] text-white rounded-xl font-heading text-lg shadow-md transition mt-10 hover:cursor-pointer">
@@ -106,7 +125,15 @@ const About = () => {
             </motion.button>
 
           </div>
-          <img src="https://res.cloudinary.com/db0wuel0k/image/upload/v1757086329/got_chovs6.jpg"
+          <motion.img
+          ref={ref}
+
+          initial={{opacity:0, scale :0}}
+          animate={{opacity:1, scale:1}}
+          transition={{
+            duration: 0.5
+          }}
+          src="https://res.cloudinary.com/db0wuel0k/image/upload/v1757086329/got_chovs6.jpg"
             className='hidden md:block h-[25%] w-[25%] rounded-xl ml-10 mr-20 shadow-2xl z-20 ' />
         </div>
 

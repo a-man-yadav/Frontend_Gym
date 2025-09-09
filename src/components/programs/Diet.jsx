@@ -2,7 +2,7 @@ import React from 'react'
 import { FaInstagram, FaTwitter, FaFacebookF } from "react-icons/fa";
 
 
-const Exercise = () => {
+const Diet = () => {
 
     const featured = [
         {
@@ -23,15 +23,6 @@ const Exercise = () => {
             duration: "4 Weeks",
             level: "Intermediate"
         },
-        {
-            id: 3,
-            img: "https://res.cloudinary.com/db0wuel0k/image/upload/v1757217231/unname_autipp.png",
-            title: "CARDIO BLAST",
-            category: "Cardio",
-            description: "High-intensity cardio to incinerate fat and boost endurance.",
-            duration: "4 Weeks",
-            level: "Intermediate"
-        }
     ]
 
     const allPrograms = [
@@ -52,25 +43,7 @@ const Exercise = () => {
             description: "High-intensity cardio to incinerate fat and boost endurance.",
             duration: "4 Weeks",
             level: "Intermediate"
-        },
-        {
-            id: 3,
-            img: "https://res.cloudinary.com/db0wuel0k/image/upload/v1757217231/unname_autipp.png",
-            title: "CARDIO BLAST",
-            category: "Cardio",
-            description: "High-intensity cardio to incinerate fat and boost endurance.",
-            duration: "4 Weeks",
-            level: "Intermediate"
-        },
-        {
-            id: 4,
-            img: "https://res.cloudinary.com/db0wuel0k/image/upload/v1757217231/unname_autipp.png",
-            title: "CARDIO BLAST",
-            category: "Cardio",
-            description: "High-intensity cardio to incinerate fat and boost endurance.",
-            duration: "4 Weeks",
-            level: "Intermediate"
-        },
+        }
     ]
 
     return (
@@ -164,14 +137,7 @@ const Exercise = () => {
 
             </section>
 
-            {/* user programs */}
-
-            <section className='relative w-full mt-10 p-5 items-center justify-center mb-10'>
-                <div className='flex justify-between'>
-                    <h1 className='text-white text-xl md:text-2xl lg:text-4xl ml-16 font-bold uppercase'>User Programs</h1>
-                    <button className=' bg-[#E50914] text-white  px-7 mt-2 rounded-lg py-4 font-bold hover:bg-[#9b252b] hover:cursor-pointer'>Create Your Own Program</button>
-                </div>
-            </section>
+            
 
 
 
@@ -185,7 +151,7 @@ const Exercise = () => {
                         <p className='text-gray-400 pt-1'>Stop waiting. The best time to start was yesterday. The next best time is now.Join our community and transform your life.
 
                         </p>
-                    
+                        
                     </div>
 
                     <div className="border-t border-gray-800" />
@@ -236,4 +202,5 @@ const Exercise = () => {
     )
 }
 
-export default Exercise
+export default Diet
+
