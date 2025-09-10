@@ -151,7 +151,7 @@ const About = () => {
               boxShadow: "0px 8px 100px rgba(229, 9, 20, 0.5)"
             }}
 
-            viewport={{ once: false, amount: 0 }}
+            viewport={{ once: true, amount: 0 }}
             transition={{
               duration: 1,
               ease: "easeInOut"
