@@ -1,11 +1,10 @@
 import React from 'react'
 import { FaInstagram, FaTwitter, FaFacebookF } from "react-icons/fa";
-import { useNavigate } from 'react-router-dom';
+import {  Link } from 'react-router-dom';
 
 
 const Exercise = () => {
 
-    const navigate = useNavigate() 
 
     const featured = [
         {
@@ -120,9 +119,9 @@ const Exercise = () => {
                         </div>
                     ))}
                 </div>
-
-                <p className='text-white text-right mt-2 mr-20 hover:text-[#E50914] hover:underline hover:cursor-pointer hover:-translate-y-1'>More Programs By Us →</p>
-
+                <div className='text-right mt-2'>
+                    <Link className='text-white mt-2 mr-20 hover:text-[#E50914] hover:underline hover:cursor-pointer hover:-translate-y-1'>More Programs By Us →</Link>
+                </div>
             </section>
 
 
@@ -163,11 +162,12 @@ const Exercise = () => {
                     ))}
                 </div>
 
-                <p className='text-white text-right mt-2 mr-20 hover:text-[#E50914] hover:underline hover:cursor-pointer hover:-translate-y-1'>More Programs By Us →</p>
-
+                <div className='text-right mt-2'>
+                    <Link className='text-white mt-2 mr-20 hover:text-[#E50914] hover:underline hover:cursor-pointer hover:-translate-y-1'>More Programs By Us →</Link>
+                </div>
             </section>
 
-           
+
 
 
 
@@ -181,7 +181,7 @@ const Exercise = () => {
                         <p className='text-gray-400 pt-1'>Stop waiting. The best time to start was yesterday. The next best time is now.Join our community and transform your life.
 
                         </p>
-                    
+
                     </div>
 
                     <div className="border-t border-gray-800" />

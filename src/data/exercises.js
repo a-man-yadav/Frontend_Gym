@@ -1,5 +1,5 @@
 export const exercises = [
-  {
+  { 
     id: 1,
     name: "Bench Press",
     thumbnail: "https://i.ibb.co/0cRz4cX/bench-press.jpg",

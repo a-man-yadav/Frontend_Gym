@@ -169,7 +169,7 @@ const Step2Builder = ({ programData, setProgramData, prevStep }) => {
                       </div>
                     </div>
 
-                    <div className="flex items-center gap-3">
+                    <div className="flex items-center gap-3 text-white">
                       <input
                         type="number"
                         value={ex.sets ?? ex.defaultSets}

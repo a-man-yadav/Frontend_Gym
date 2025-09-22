@@ -1,13 +1,10 @@
 import React from 'react'
 import Navbar from '../components/Navbar'
-import Footer from '../components/Footer'
-import { motion } from 'framer-motion'
+import { motion, useScroll } from 'motion/react'
 import { FaFacebookF, FaInstagram, FaTwitter } from 'react-icons/fa'
+import { useNavigate } from 'react-router-dom'
 
 const About = () => {
-
-
-
   const members = [
     {
       name: "Sarah M.",
@@ -28,8 +25,6 @@ const About = () => {
         "The group classes are so much fun and they keep me consistent. The community here is just amazing and so motivating!",
     },
   ];
-
-
   const facilities = [
     {
       img: "https://res.cloudinary.com/db0wuel0k/image/upload/v1757091590/gym-with-indoor-cycling-equipment-min_umsykn.jpg",
@@ -72,9 +67,26 @@ const About = () => {
       description: "Pristine showers and changing rooms."
     },
   ]
+  const { scrollYProgress } = useScroll();
 
+  const navigate = useNavigate();
+ motion
   return (
     <div>
+      <motion.div
+              id="scroll-indicator"
+              style={{
+                scaleX: scrollYProgress,
+                position: "fixed",
+                top: 0,
+                left: 0,
+                right: 0,
+                height: 5,
+                originX: 0,
+                zIndex:100,
+                backgroundColor: "#e50914",
+              }} />
+            
       <Navbar />
       {/* TOP PART */}
       <section className="relative w-full min-h-screen flex items-center">
@@ -86,7 +98,7 @@ const About = () => {
         <div className="absolute inset-0 bg-black/80" />
 
         <div className="relative z-10 text-white text-left flex ml-10 mb-10">
-          <div className="mt-16 pt-10 max-w-3xl">
+          <div className="mt-12 pt-10 max-w-3xl ml-16">
             <h3 className="text-gray-400">About MY_FIT Gym</h3>
 
             <motion.h1
@@ -114,6 +126,7 @@ const About = () => {
             </motion.p>
 
             <motion.button
+            onClick={() => navigate("/signup")}
               initial={{ opacity: 0, scale: 0.5 }}
               whileInView={{ opacity: 1, scale: 1 }}
               viewport={{ once: false, amount: 0.2 }}
@@ -132,7 +145,7 @@ const About = () => {
             transition={{ duration: 0.65 }}
             src="https://res.cloudinary.com/db0wuel0k/image/upload/v1757086329/got_chovs6.jpg"
             alt="trainer"
-            className="hidden md:block h-[25%] w-[25%] rounded-xl ml-10 mr-20 shadow-2xl z-20 transform-gpu"
+            className="hidden md:block mt-10 h-auto w-[25%] rounded-xl ml-10 mr-20 shadow-2xl z-20 transform-gpu"
             style={{ willChange: "transform, opacity", backfaceVisibility: "hidden" }}
           />
         </div>
@@ -188,7 +201,7 @@ const About = () => {
                   whileInView={{ opacity: 1, scale: 1 }}
                   viewport={{ once: false, amount: 0 }}
                   transition={{ duration: 0.6, delay: 2, ease: "easeInOut" }}
-                  className='text-3xl md:text-5xl font-bold md:my-6 text-[#E50914]'>5+</motion.h3>
+                  className='text-3xl md:text-7xl font-bold md:my-6 text-[#E50914]'>5+</motion.h3>
                 <motion.p
                   initial={{ opacity: 0, y: 50 }}
                   whileInView={{ opacity: 1, y: 0 }}
@@ -203,7 +216,7 @@ const About = () => {
                   whileInView={{ opacity: 1, scale: 1 }}
                   viewport={{ once: false, amount: 0 }}
                   transition={{ duration: 0.6, delay: 2, ease: "easeInOut" }}
-                  className='text-3xl md:text-5xl font-bold md:my-6 text-[#E50914]'>600+</motion.h3>
+                  className='text-3xl md:text-7xl font-bold md:my-6 text-[#E50914]'>600+</motion.h3>
                 <motion.p
                   initial={{ opacity: 0, y: 50 }}
                   whileInView={{ opacity: 1, y: 0 }}
@@ -218,7 +231,7 @@ const About = () => {
                   whileInView={{ opacity: 1, scale: 1 }}
                   viewport={{ once: false, amount: 0 }}
                   transition={{ duration: 0.6, delay: 2, ease: "easeInOut" }}
-                  className='text-3xl md:text-5xl font-bold md:my-6 text-[#E50914]'>90%</motion.h3>
+                  className='text-3xl md:text-7xl font-bold md:my-6 text-[#E50914]'>90%</motion.h3>
                 <motion.p
                   initial={{ opacity: 0, y: 50 }}
                   whileInView={{ opacity: 1, y: 0 }}

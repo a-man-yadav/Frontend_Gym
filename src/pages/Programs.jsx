@@ -2,17 +2,29 @@ import React from 'react'
 import Navbar from '../components/Navbar'
 import SearchBar from '../components/SearchBar'
 import { Outlet, useNavigate } from 'react-router-dom'
-import {motion} from 'framer-motion'
+import { motion, useScroll } from 'motion/react'
 
 const Programs = () => {
-
-
   const navigate = useNavigate();
+  const { scrollYProgress } = useScroll();
 
   return (
 
 
     <div>
+      <motion.div
+        id="scroll-indicator"
+        style={{
+          scaleX: scrollYProgress,
+          position: "fixed",
+          top: 0,
+          left: 0,
+          right: 0,
+          height: 5,
+          originX: 0,
+          zIndex: 100,
+          backgroundColor: "#e50914",
+        }} />
       <Navbar />
 
       <section className="relative w-full h-96 overflow-hidden">
@@ -25,17 +37,17 @@ const Programs = () => {
         <div className="absolute inset-0 bg-black/40"></div>
         <div className="relative z-10 flex flex-col items-center justify-center h-full">
           <motion.h1
-          initial = {{opacity: 0, y: -50}}
-          animate = {{opacity: 1, y: 0}}
-          transition = {{duration: 1}}
-          className="text-white text-4xl md:text-7xl max-w-4xl font-bold mb-4">
+            initial={{ opacity: 0, y: -50 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 1 }}
+            className="text-white text-4xl md:text-7xl max-w-4xl font-bold mb-4">
             Explore Our Programs
           </motion.h1>
-          <motion.p 
-          initial = {{opacity: 0, y: 50}}
-          animate = {{opacity: 1, y: 0}}
-          transition = {{duration: 1}}
-          className="text-gray-300 text-base md:text-xl mt-2">
+          <motion.p
+            initial={{ opacity: 0, y: 50 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 1 }}
+            className="text-gray-300 text-base md:text-xl mt-2">
             Find the perfect plan to achieve your fitness goals.
           </motion.p>
         </div>
@@ -56,7 +68,7 @@ const Programs = () => {
 
       <Outlet />
 
-      
+
     </div>
   )
 }

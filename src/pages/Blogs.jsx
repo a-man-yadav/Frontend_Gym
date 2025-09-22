@@ -35,6 +35,7 @@ const Blogs = () => {
       <h2 className="text-center text-3xl md:text-4xl font-bold mb-12 ">
         Our Blogs
       </h2>
+      
 
       <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3 max-w-6xl mx-auto">
         {posts.map((post) => (

@@ -1,12 +1,12 @@
 import React, { useState } from "react";
 import { IoMenu, IoClose } from "react-icons/io5";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { motion } from 'framer-motion'
 
 const Navbar = () => {
     const [menu, setMenu] = useState(false);
 
-    // const navigate = useNavigate()
+    const navigate = useNavigate();
 
     const items = [
         { id: 1, text: "Home", path: "/" },
@@ -46,16 +46,22 @@ const Navbar = () => {
 
                 <div className="flex space-x-2">
                     <div className="flex mt-2 md:flex">
-                        <a className="hover:text-[#E50914] duration-200 hover:underline hover:cursor-pointer mr-1">
+                        <Link
+                        to="/login"
+                        className="hover:text-[#E50914] duration-200 hover:underline hover:cursor-pointer mr-1">
                             Login
-                        </a>
+                        </Link>
                         <p>/</p>
-                        <a className="hover:text-[#E50914] duration-200 hover:underline hover:cursor-pointer mx-1">
+                        <Link
+                        to = "/signup"
+                        className="hover:text-[#E50914] duration-200 hover:underline hover:cursor-pointer mx-1">
                             Signup
-                        </a>
+                        </Link>
                     </div>
 
-                    <button className="px-2 py-2 bg-[#E50914] hover:bg-[#b20710] hover:cursor-pointer rounded-lg">
+                    <button
+                    onClick={() => navigate("/signup")}
+                    className="px-2 py-2 bg-[#E50914] hover:bg-[#b20710] hover:cursor-pointer rounded-lg">
                         Join Now
                     </button>
                 </div>

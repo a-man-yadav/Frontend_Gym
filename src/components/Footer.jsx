@@ -1,5 +1,6 @@
 import React from "react";
 import { FaInstagram, FaTwitter, FaFacebookF } from "react-icons/fa";
+import {Link} from 'react-router-dom'
 
 const Footer = () => {
   return (
@@ -9,9 +10,11 @@ const Footer = () => {
           <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold leading-tight">
             Start Your Fitness Journey Today!
           </h2>
+          <Link to="/signup">
           <button className="mt-6 inline-block px-6 py-2 bg-[#E50914] hover:bg-[#b20710] hover:cursor-pointer text-white rounded-full font-semibold">
             Join Now
           </button>
+          </Link>
         </div>
 
         <div className="border-t border-gray-800" />
